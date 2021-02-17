@@ -15,13 +15,13 @@ export default function SignUpForm(){
     <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email">E-mail</label>
         <input name="email" type="text" ref={register({ required: true})}/>
-        {errors.email && <span>This field is required</span>}
-        <label htmlFor="username">Username</label>
+        {errors.email && <span>Dit veld is verplicht</span>}
+        <label htmlFor="username">Gebruikersnaam</label>
         <input name="username" type="text" ref={register({ required: true })}/>
-        {errors.userName && <span>This field is required</span>}
-        <label htmlFor="password">Password</label>
+        {errors.userName && <span>Dit veld is verplicht</span>}
+        <label htmlFor="password">Wachtwoord</label>
         <input name="password" type="password" ref={register({ required: true })}/>
-        {errors.password && <span>This field is required</span>}
+        {errors.password && <span>Dit veld is verplicht</span>}
         <input type="submit"/>
     </form>
 </div>

@@ -11,12 +11,12 @@ export default function SignInForm(){
 
     // console.log("ERRORS:", errors)
     return <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="userName">Username</label>
+        <label htmlFor="userName">Gebruikersnaam</label>
         <input name="userName" type="text" ref={register({ required: true })}/>
-        {errors.userName && <span>This field is required</span>}
-        <label htmlFor="password">Password</label>
+        {errors.userName && <span>Dit veld is verplicht</span>}
+        <label htmlFor="password">Wachtwoord</label>
         <input name="password" type="password" ref={register({ required: true })}/>
-        {errors.password && <span>This field is required</span>}
+        {errors.password && <span>Dit veld is verplicht</span>}
         <input type="submit"/>
     </form>
 }

@@ -1,12 +1,70 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import Home from './pages/Home'
+import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
+import Profile from "./pages/Profile";
+import NextContent from "./pages/NextContent";
+import PreviousContent from "./pages/PreviousContent";
 
-function App() {
-  return (
-    <div>
-      Hallo allemaal
-    </div>
-  );
+export default function App() {
+    return (
+        <Router>
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/previouscontent">Mis niets</Link>
+                        </li>
+                        <li>
+                            <Link to="nextcontent">Wordt verwacht</Link>
+                        </li>
+                        <li>
+                            <Link to="/signup">Sign up</Link>
+                        </li>
+                        <li>
+                            <Link to="/signin">Sign in</Link>
+                        </li>
+                        <li>
+                            <Link to="/profile">Profile</Link>
+                        </li>
+                    </ul>
+                </nav>
+
+                {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+                <Switch>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route path="/previouscontent">
+                        <PreviousContent />
+                    </Route>
+                    <Route path="/nextcontent">
+                        <NextContent />
+                    </Route>
+                    <Route path="/signup">
+                        <SignUp />
+                    </Route>
+                    <Route path="/signin">
+                        <SignIn />
+                    </Route>
+                    <Route path="/profile">
+                        <Profile />
+                    </Route>
+                    <Route path="/">
+                        <h1>404 not found, sufferd</h1>
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
+    );
 }
-
-export default App;
